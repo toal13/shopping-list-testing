@@ -24,7 +24,7 @@ const ItemInput: React.FC<ItemInputProps> = ({ addItem }) => {
         placeholder="Add new item"
         className="flex-grow p-2 border rounded"
       />
-      <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700" type="submit" >Add</button>
+      <button className="bg-blue-500 text-white ml-3 px-4 py-2 rounded hover:bg-blue-700" type="submit" >Add</button>
     </form>
   );
 };

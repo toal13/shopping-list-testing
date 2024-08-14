@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'], 
+      },
+      backgroundImage: {
+        'custom-bg': "url('/src/assets/background.jpg')",
+      },
+    },
   },
   plugins: [],
 }

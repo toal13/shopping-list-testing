@@ -6,8 +6,8 @@ function App() {
   
   return (
     <>
-      <div className=" bg-">
-      <h1 className="text-2xl font-bold text-center mb-4 mt-10">Shopping List</h1>
+      <div className=" min-h-screen bg-custom-bg bg-cover bg-center font-sans">
+      <h1 className="text-4xl font-bold text-center mb-4 pt-12 text-neutral-600">Shopping List</h1>
       <ShoppingList />
     </div>
     </>
