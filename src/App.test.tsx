@@ -1,47 +1,22 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import App from "./App";
 
 describe("App", () => {
-  it("should be possible to add an item to the shopping list", () => {
-    render(<App />);
 
-    fireEvent.input(screen.getByPlaceholderText("Add new item"), {
-      target: { value: "Milk" },
+  describe("App", () => {
+    it("should display an h1", () => {
+      render(<App />); 
+  
+      const heading = screen.getByRole("heading", { level: 1 });
+      expect(heading).toBeInTheDocument();  
+      expect(heading).toHaveTextContent("Shopping List"); 
     });
-
-    fireEvent.click(screen.getByText("Add"));
-
-    expect(screen.getByText("Milk")).toBeInTheDocument();
-  });
-
-  it("should be possible to add multiple items to the shopping list", () => {
-    render(<App />);
-
-    fireEvent.input(screen.getByPlaceholderText("Add new item"), {
-      target: { value: "Milk" },
-    });
-    fireEvent.click(screen.getByText("Add"));
-
-    fireEvent.input(screen.getByPlaceholderText("Add new item"), {
-      target: { value: "Bread" },
-    });
-    fireEvent.click(screen.getByText("Add"));
-
-    expect(screen.getByText("Milk")).toBeInTheDocument();
-    expect(screen.getByText("Bread")).toBeInTheDocument();
-  });
-
-  it("should be possible to remove an item from the shopping list", () => {
-    render(<App />);
-
-    fireEvent.input(screen.getByPlaceholderText("Add new item"), {
-      target: { value: "Milk" },
-    });
-    fireEvent.click(screen.getByText("Add"));
-
-    fireEvent.click(screen.getByText("Remove"));
-
-    expect(screen.queryByText("Milk")).not.toBeInTheDocument();
-  });
+    
+    it("should include the shopping list", () => {
+      render(<App />); 
+  
+      const list = screen.getByRole("list"); 
+      expect(list).toBeInTheDocument();
+    });});
 });

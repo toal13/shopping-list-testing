@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import ShoppingList from "./ShoppingList";
 
 describe("ShoppingList", () => {
+  // Integration between ShoppingList and ItemInput
   it("should render an input with a submit button", () => {
     render(<ShoppingList />);
 
@@ -19,6 +20,23 @@ describe("ShoppingList", () => {
 
     // Assert
     expect(screen.getByText("Milk")).toBeInTheDocument();
+  });
+
+  it("should be possible to add multiple items to the shopping list", () => {
+    render(<ShoppingList />);
+
+    fireEvent.input(screen.getByPlaceholderText("Add new item"), {
+      target: { value: "Milk" },
+    });
+    fireEvent.click(screen.getByText("Add"));
+
+    fireEvent.input(screen.getByPlaceholderText("Add new item"), {
+      target: { value: "Bread" },
+    });
+    fireEvent.click(screen.getByText("Add"));
+
+    expect(screen.getByText("Milk")).toBeInTheDocument();
+    expect(screen.getByText("Bread")).toBeInTheDocument();
   });
 
   it("should remove an item when the remove button is clicked", () => {

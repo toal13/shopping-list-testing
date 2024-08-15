@@ -25,7 +25,7 @@ const ShoppingList: React.FC = () => {
   };
  
   return (
-    <div className="max-w-lg mx-auto p-4 text-center">
+    <div className="max-w-lg p-4 mx-auto text-center" data-testid="shopping-list">
       <ItemInput addItem={addItem} />
       <ul className="mt-4 space-y-2">
         {items.map((item) => (
