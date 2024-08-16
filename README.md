@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+# Shopping List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The Shopping List App is a simple web application that allows users to manage their shopping lists. Users can add items to the list and remove items as needed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Add Items:** Users can enter new items into a form and add them to the list.
+- **Remove Items:** Each item in the list has a remove button that allows users to delete the item.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Testing
 
-- Configure the top-level `parserOptions` property like this:
+To ensure the quality of the application, the following tests have been implemented:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Unit Tests
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **ItemInput:**
+  - Tests that items are correctly added to the list.
+- **ShoppingItem:**
+  - Tests that the item name is displayed correctly and that the remove button functions as expected.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Integration Tests
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+- **ShoppingList:**
+  - Tests that the list displays and updates correctly when items are added or removed.
+- **App:**
+  - Tests that the entire application works correctly when all components are integrated.
+
+## Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/toal13/shopping-list-testing.git
+   ```
+2. Install dependencies
+   ```sh
+   npm install
+   ```
+3. Start server
+   ```sh
+   npm run dev
+   ```
+
+## Running tests
+
+```sh
+npm test
 ```
