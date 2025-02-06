@@ -2,6 +2,8 @@
 
 ![Screenshot 2024-08-16 at 15 06 46](https://github.com/user-attachments/assets/5f4f51c7-3f48-4932-a080-4f5b9acceef2)
 
+[Demo](https://shopping-list-testing.vercel.app/)
+
 ## Overview
 
 The Shopping List App is a simple web application that allows users to manage their shopping lists. Users can add items to the list and remove items as needed.
